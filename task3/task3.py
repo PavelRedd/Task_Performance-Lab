@@ -25,9 +25,9 @@ def main():
         path2 = input("Введите путь к файлу tests.json: ")
         path3 = input("Введите путь к файлу report.json: ")
     else:
-        path1 = sys.argv[1]  # путь к values.json
-        path2 = sys.argv[2]  # путь к tests.json
-        path3 = sys.argv[3]  # путь к report.json
+        path1 = sys.argv[1]
+        path2 = sys.argv[2]
+        path3 = sys.argv[3]
     
     values_data = load_json(path1)
     tests_data = load_json(path2)
