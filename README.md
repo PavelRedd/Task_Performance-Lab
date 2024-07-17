@@ -6,11 +6,12 @@
 
 Каждый скрипт запускается командой `python`, за которой следует имя скрипта и необходимые аргументы.
 
-### Задача 1
+### Задача 1-2
 
 **Использование:**
 ```sh
 python task1.py <n> <m>
 python task1.py 5 1
+
 python task2.py <путь_к_файлу_окружности> <путь_к_файлу_точек>
 python task2.py D:\Test_perfomance_lab\circle.txt D:\Test_perfomance_lab\points.txt
