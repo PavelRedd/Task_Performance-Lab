@@ -1,17 +1,20 @@
+import sys
 from math import sqrt
 
-if __name__ == '__main__':
-    path1 = input('Путь до файла с координатами и радиусом окружности: ')
-    path2 = input('Путь до файла с координатами точек: ')
+def main():
+    if len(sys.argv) < 3:
+        print("Usage: python task2.py <D:/.../path_to_file>")
+        return
+    path1 = sys.argv[1]
+    path2 = sys.argv[2]
     with open(path1) as f:
         xc, yc = f.readline().split()
         xc, yc = float(xc), float(yc)
-        r = int(f.readline(2))
+        r = float(f.readline().strip())
     with open(path2) as f:
         points = f.readlines()
     for point in points:
-        x = float(point.split()[0])
-        y = float(point.split()[1])
+        x, y = map(float, point.split())
         s = sqrt((xc - x) ** 2 + (yc - y) ** 2)
         if s == r:
             print(0)
@@ -19,3 +22,6 @@ if __name__ == '__main__':
             print(1)
         else:
             print(2)
+
+if __name__ == '__main__':
+    main()
