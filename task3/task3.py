@@ -25,17 +25,14 @@ def main():
         path2 = input("Введите путь к файлу tests.json: ")
         path3 = input("Введите путь к файлу report.json: ")
     else:
-        path1 = sys.argv[1]
-        path2 = sys.argv[2]
-        path3 = sys.argv[3]
+        path1 = sys.argv[1]  
+        path2 = sys.argv[2] 
+        path3 = sys.argv[3] 
     
     values_data = load_json(path1)
     tests_data = load_json(path2)
-    
     value_dict = build_value_dict(values_data['values'])
-    
     fill_values(tests_data['tests'], value_dict)
-    
     save_json(path3, tests_data)
 
 if __name__ == '__main__':
